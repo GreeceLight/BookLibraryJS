@@ -1,6 +1,8 @@
 body{
-    padding: 0%; margin: 0%;
+    display: flex;
+    padding: 1%; margin: 0%;
     background-color: rgb(230, 230, 230);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 h1, h2, h3, h4, h5{
     padding: 0%; margin: 0%;
@@ -21,8 +23,9 @@ h1, h2, h3, h4, h5{
     justify-content: center;
 
     margin: 20px;
-    background-color: grey;
+    background-color: rgb(199, 240, 240);
     border-radius: 10px;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.438);
 }
 
 .book{
@@ -30,17 +33,24 @@ h1, h2, h3, h4, h5{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    
     min-height: 380px;
     margin: 20px;
-
+    
     border-radius: 10px;
-    background-color: grey;
+    background-color: rgb(165, 226, 228);
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.438);
 }
 .book .book-cover{
     display: flex;
     flex-direction: column;
+    width: 100%; height: 70%;
+
+    text-align: center;
+
+    border-radius: 10px;
     align-items: center;
+    justify-content: center;
 }
 .book .book-interact{
     display: flex;
@@ -50,4 +60,32 @@ h1, h2, h3, h4, h5{
 .book-interact button{
     padding: 5px 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+
+    left: 50%;
+    top: 50%;
+    width: 500px; height: 600px;
+    margin-top: -300px; margin-left: -250px;
+
+    background-color: white;
+    border-radius: 20px;
+
+    visibility: hidden;
+}
+.form input{
+    margin-bottom: 30px;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+.form button{
+    padding: 10px 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
 }
