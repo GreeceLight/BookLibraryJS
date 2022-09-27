@@ -70,8 +70,8 @@ h1, h2, h3, h4, h5{
 
     left: 50%;
     top: 50%;
-    width: 400px; height: 400px;
-    margin-top: -200px; margin-left: -200px;
+    width: 500px; height: 600px;
+    margin-top: -300px; margin-left: -250px;
 
     background-color: white;
     border-radius: 20px;
@@ -79,11 +79,13 @@ h1, h2, h3, h4, h5{
     visibility: hidden;
 }
 .form input{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
 }
 .form button{
     padding: 10px 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
 }
