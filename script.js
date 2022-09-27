@@ -1,7 +1,23 @@
 const addBookButton = document.querySelector(".add-book");
+const form = document.querySelector(".form");
+const addBook = document.querySelector("#add-to-library");
+const cancelAdd = document.querySelector("#cancel-add");
+const bookName = document.getElementById("bookName")
+const bookAuthor = document.getElementById("bookAuthor")
+const bookPages = document.getElementById("bookPages")
+const bookRead = document.getElementById("bookRead")
 const bookSection = document.querySelector(".book-section");
 
-addBookButton.addEventListener("click", addBookToLibrary)
+addBookButton.addEventListener("click", function(){
+    form.style.visibility = "visible"
+})
+addBook.addEventListener("click", function(){
+    form.style.visibility = "hidden"
+    addBookToLibrary()
+})
+cancelAdd.addEventListener("click", function(){
+    form.style.visibility = "hidden"
+})
 
 let myLibrary = [];
 
@@ -13,18 +29,14 @@ function Book(name, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function() {
-        console.log(this.name + " " + this.author + " " + this.pages + " " 
-        + this.read);
-    }
 }
 
 function addBookToLibrary() {
     let book = new Book(
-        prompt("What is the name of your book?"), 
-        prompt("What is the author of your book?"), 
-        prompt("What is the pages of your book?"), 
-        confirm("Have you read it?"));
+        bookName.value,
+        bookAuthor.value,
+        bookPages.value,
+        bookRead.checked)
     myLibrary.push(book);
     showBooks();
 }
