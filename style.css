@@ -2,7 +2,7 @@ body{
     padding: 0%; margin: 0%;
     background-color: rgb(230, 230, 230);
 }
-h1, h2, h3, h4{
+h1, h2, h3, h4, h5{
     padding: 0%; margin: 0%;
 }
 
@@ -37,17 +37,17 @@ h1, h2, h3, h4{
     border-radius: 10px;
     background-color: grey;
 }
-.book #book-cover{
+.book .book-cover{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.book #book-interact{
+.book .book-interact{
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
-#book-interact button{
+.book-interact button{
     padding: 5px 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
