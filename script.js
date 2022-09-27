@@ -3,7 +3,6 @@ const bookSection = document.querySelector(".book-section");
 
 addBookButton.addEventListener("click", addBookToLibrary)
 
-
 let myLibrary = [];
 
 function Book(name, author, pages, read) {
@@ -21,13 +20,12 @@ function Book(name, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    let name = prompt("What is the name of your book?");
-    let author = prompt("What is the author of your book?");
-    let pages = prompt("What is the pages of your book?");
-    let read = confirm("Have you read it?");
-    let book = new Book(name, author, pages, read);
+    let book = new Book(
+        prompt("What is the name of your book?"), 
+        prompt("What is the author of your book?"), 
+        prompt("What is the pages of your book?"), 
+        confirm("Have you read it?"));
     myLibrary.push(book);
-    console.log(myLibrary);
     showBooks();
 }
 
@@ -48,6 +46,8 @@ function showBooks(){
         //create book cover section
         const cover = document.createElement("div");
         cover.className = "book-cover"
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        cover.style.backgroundColor = "#" + randomColor;
         newBook.appendChild(cover)
         
         //create book interact section
@@ -57,18 +57,15 @@ function showBooks(){
         
         //create book title
         const title = document.createElement("h1")
-        title.textContent = book.name
-        cover.appendChild(title)
+        createBookElement(title, cover, book.name)
         
         //create book author
         const author = document.createElement("h3")
-        author.textContent = book.author
-        cover.appendChild(author)
+        createBookElement(author, cover, book.author)
         
         //create book pages number
         const pages = document.createElement("h4")
-        pages.textContent = book.pages
-        cover.appendChild(pages)
+        createBookElement(pages, cover, book.pages)
         
         //create book read or not text
         const hasRead = document.createElement("h5")
@@ -113,4 +110,9 @@ function removeBook(number){
     myLibrary.splice(number, 1);
     console.log(myLibrary);
     showBooks();
+}
+
+function createBookElement(element, parent, book){
+    element.textContent = book;
+    parent.appendChild(element);
 }
