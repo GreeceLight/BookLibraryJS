@@ -32,13 +32,18 @@ function Book(name, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    let book = new Book(
-        bookName.value,
-        bookAuthor.value,
-        bookPages.value,
-        bookRead.checked)
-    myLibrary.push(book);
-    showBooks();
+    if(checkBookValues() == 3){
+        let book = new Book(
+            bookName.value,
+            bookAuthor.value,
+            bookPages.value,
+            bookRead.checked)
+        myLibrary.push(book);
+        showBooks();
+    }
+    else{
+        return
+    }
 }
 
 function showBooks(){
@@ -127,4 +132,23 @@ function removeBook(number){
 function createBookElement(element, parent, book){
     element.textContent = book;
     parent.appendChild(element);
+}
+
+function checkBookValues(){
+    let allGoodNumber = 0
+    if(bookName.value != "") allGoodNumber++
+    else {
+        alert("You Need to put in a Valid Name!")
+    }
+    if (bookAuthor.value != "") {
+        allGoodNumber++ 
+    } else {
+        alert("You Need to put in a Valid Author!")
+    }
+    if (bookPages.value != "") {
+        allGoodNumber++
+    } else {
+        alert("You Need to put in a Valid Page Number!")
+    }
+    return allGoodNumber;
 }
