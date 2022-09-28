@@ -1,6 +1,6 @@
 body{
     display: flex;
-    padding: 1%; margin: 0%;
+    padding: 0%; margin: 0%;
     background-color: rgb(230, 230, 230);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
@@ -10,6 +10,7 @@ h1, h2, h3, h4, h5{
 
 .book-section{
     display: grid;
+    width: 100%; height: 100vh;
     overflow: scroll;
     grid-template-columns: repeat(4, 300px);
     grid-template-rows: repeat(2, 400px);
